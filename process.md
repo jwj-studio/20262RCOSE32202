@@ -18,6 +18,18 @@
 - Stack과 Heap은 서로를 향해 자라기 때문에 그 사이 공간을 함께 사용한다.
 
 ## 3. 프로세스 상태
+- **New**: 프로세스가 생성되는 중
+- **Ready**: CPU를 할당받기를 기다리는 중
+- **Running**: CPU를 할당받아 실행 중
+- **Waiting (Blocked)**: I/O 완료 같은 이벤트를 기다리는 중
+- **Terminated**: 실행이 끝남
+
+### 상태 전이
+- Ready → Running: 스케줄러가 CPU를 할당 (dispatch)
+- Running → Ready: 할당 시간 만료(timeout) 또는 인터럽트
+- Running → Waiting: I/O 요청 등 이벤트 대기
+- Waiting → Ready: 기다리던 이벤트 완료
+- Running → Terminated: 실행 종료 (exit)
 
 ## 4. PCB (Process Control Block)
 
